@@ -8,7 +8,7 @@ pipeline{
         }
         stage('Build Image'){
             steps{
-                sh "docker build -t=anthony47/dockerize ."
+                sh "docker build -t=anthony47/seleniumdocker47 ."
             }
         }
         stage('Push Image'){
