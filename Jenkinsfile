@@ -13,10 +13,10 @@ pipeline{
         }
         stage('Push Image'){
             environment{
-                DOCKER_HUB = credentials('docker-red')
+                DOCKER_HUB = credentials('dockerCred')
             }
             steps{
-                sh 'docker login -u ${DOCKER_HUB_USR} -p ${DOCKER_HUB_PSW}'
+                sh 'echo $DOCKER_HUB_PSW | docker login -u $DOCKER_HUB_USR --password-stdin'
                 sh "docker push anthony47/seleniumdocker47"
             }
         }
